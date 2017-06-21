@@ -50,7 +50,7 @@ let Project1 = React.createClass({
                     secureTextEntry={true}/>//TODO 显示为密码格式的属性
 */
 
-
+//TODO 不要增加多余的属性，可能会造成适得其反的效果
 let styles = StyleSheet.create({
   container: {
     flex: 1,

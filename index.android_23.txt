@@ -26,50 +26,18 @@ let componentWidth = totalWidth * 0.8;
 //代码中一行结束使用“;”
 
 //TODO createClass 推测为Component中的函数，所以需要含有Component对象，的对象
-
-//TODO getInitialState 為聲明的內部函數【這個函數其實是一個初始化函數，算是覆蓋了原來的函數】
-//TODO 同時聲明了兩個狀態變量【類似于 Java類的 屬性值】
-
-//TODO updateNum 為更新狀態變量inputedNum的函數
-//TODO 但狀態變量只能使用setState賦值的變更【需要重點注意的地方】
-
-
 let Project1 = React.createClass({
-  getInitialState:function(){
-    return {
-        inputedNum:'',
-        inputedPW:'',
-    }
-  },
-  updateNum:function(newText){
-    this.setState((state)=>{
-        return {
-            inputedNum:newText,
-        };
-    });
-  },
-  updatePW:function(newText){
-    this.setState(()=>{
-        return {
-            inputedPW:newText,
-        };
-    });
-  },
   render: function() {
     return (
       <View style={styles.container}>
         <TextInput style={styles.numberInputStyle}
-            placeholder={'请输入手机号码'}
-            onChangeText={(newText)=> this.updateNum(newText)}
-            />
+            placeholder={'请输入手机号码'}/>
         <Text style={styles.textPromptStyle}>
-          您输入的手机号:{this.state.inputedNum}
+          您输入的手机号:
         </Text>
         <TextInput style={styles.passwordInputStyle}
                     placeholder={'请输入密码'}
-                    secureTextEntry={true}
-                    onChangeText={(newText)=> this.updatePW(newText)}
-                    />
+                    secureTextEntry={true}/>
         <Text style={styles.bigTextPrompt}>
           确  定
         </Text>
@@ -78,13 +46,6 @@ let Project1 = React.createClass({
   }
 });
 /*
-
-<TextInput style={styles.passwordInputStyle}
-                    placeholder={'请输入密码'}
-                    password={true} //TODO 針對高版本的React-Native，這裡並沒有顯示為密碼欄
-                    onChangeText={(newText)=> this.updatePW(newText)}
-                    />
-
 <TextInput style={styles.passwordInputStyle}
                     placeholder={'请输入密码'}
                     secureTextEntry={true}/>//TODO 显示为密码格式的属性

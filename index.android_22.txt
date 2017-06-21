@@ -1,0 +1,70 @@
+/**
+ * Sample React Native App
+ * https://github.com/facebook/react-native
+ * @flow
+ */
+'use strict';
+//书中写法与此处不同，应该为版本不同导致
+import React, { Component } from 'react';
+import {
+  AppRegistry,
+  StyleSheet,
+  Text,
+  View
+} from 'react-native';
+//使用何种方式猜测与react-native版本有关
+//生命变量方式  与var相同   require为请求系统的某些对象，属性等的方法
+let Dimensions = require('Dimensions');
+let PixelRatio = require('PixelRatio');
+let totalWidth = Dimensions.get('window').width;//获取对象中的属性值，该值为相对值，需要乘以密度，才为真实值
+let totalHeight = Dimensions.get('window').height;
+let pixelRatio = PixelRatio.get();
+//代码中一行结束使用“;”
+
+
+
+class Project1 extends Component {
+  render() {
+  //使用React DevTool
+    let aValue;
+    console.log('render has been executed.');
+    console.log('totalHeight is:'+ totalHeight);
+    console.log('aValue[not initial] is:'+aValue);
+    console.log('the type of aValue is:'+ typeof(aValue));
+  //
+    return (
+      <View style={styles.container}>
+        <Text style={styles.welcome}>
+          pixelRatio = {pixelRatio}
+        </Text>
+        <Text style={styles.instructions}>
+          totalHeight = {totalHeight};
+        </Text>
+        <Text style={styles.instructions}>
+          totalWidth = {totalWidth}
+        </Text>
+      </View>
+    );
+  }
+}
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#F5FCFF',
+  },
+  welcome: {
+    fontSize: 20,
+    textAlign: 'center',
+    margin: 10,
+  },
+  instructions: {
+    textAlign: 'center',
+    color: '#333333',
+    marginBottom: 5,
+  },
+});
+
+AppRegistry.registerComponent('Project1', () => Project1);

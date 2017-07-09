@@ -21,6 +21,9 @@ let totalWidth = Dimensions.get('window').width;//获取对象中的属性值，
 let leftStartPoint = totalWidth * 0.1;
 let componentWidth = totalWidth * 0.8;
 
+
+// TODO navigator.push 类似于Activity中standard模式---每次调用都会重新创建一个页面覆盖在原来的上面
+// TODO navigator.replace 则类似于Fragment中的replace函数，会将使用的销毁掉
 let RegisterLeaf = React.createClass({
   getInitialState:function(){
     return {

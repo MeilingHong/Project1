@@ -15,6 +15,9 @@ let {
     Component
 } = React;
 
+
+// TODO navigator.push 类似于Activity中standard模式---每次调用都会重新创建一个页面覆盖在原来的上面
+// TODO navigator.replace 则类似于Fragment中的replace函数，会将使用的销毁掉
 let WaitingLeaf = React.createClass({
   goBack:function(){
     this.props.navigator.push({
